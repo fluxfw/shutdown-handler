@@ -1,1 +1,1 @@
-# flux-shutdown-handler
+# flux-shutdown-handler-api

@@ -1,6 +1,6 @@
 {
-    "name": "flux-shutdown-handler",
-    "productName": "flux-shutdown-handler",
+    "name": "flux-shutdown-handler-api",
+    "productName": "flux-shutdown-handler-api",
     "version": "2022-09-26-1",
     "description": "",
     "keywords": [],
