@@ -1,5 +1,6 @@
-import { ShutdownHandler } from "../ShutdownHandler/ShutdownHandler.mjs";
 import { ShutdownHandlerService } from "../../Service/ShutdownHandler/Port/ShutdownHandlerService.mjs";
+
+/** @typedef {import("../ShutdownHandler/ShutdownHandler.mjs").ShutdownHandler} ShutdownHandler */
 
 export class ShutdownHandlerApi {
     /**
