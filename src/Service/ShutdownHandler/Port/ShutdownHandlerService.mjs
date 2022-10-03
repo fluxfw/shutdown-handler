@@ -1,5 +1,6 @@
 import { GetShutdownHandlerCommand } from "../Command/GetShutdownHandlerCommand.mjs";
-import { ShutdownHandler } from "../../../Adapter/ShutdownHandler/ShutdownHandler.mjs";
+
+/** @typedef {import("../../../Adapter/ShutdownHandler/ShutdownHandler.mjs").ShutdownHandler} ShutdownHandler */
 
 export class ShutdownHandlerService {
     /**
