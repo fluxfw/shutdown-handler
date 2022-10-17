@@ -1,6 +1,5 @@
-import { ShutdownHandlerService } from "../../Service/ShutdownHandler/Port/ShutdownHandlerService.mjs";
-
 /** @typedef {import("../ShutdownHandler/ShutdownHandler.mjs").ShutdownHandler} ShutdownHandler */
+/** @typedef {import("../../Service/ShutdownHandler/Port/ShutdownHandlerService.mjs").ShutdownHandlerService} ShutdownHandlerService */
 
 export class ShutdownHandlerApi {
     /**
@@ -26,7 +25,7 @@ export class ShutdownHandlerApi {
      * @returns {Promise<void>}
      */
     async init() {
-        this.#shutdown_handler_service ??= this.#getShutdownHandlerService();
+        this.#shutdown_handler_service ??= await this.#getShutdownHandlerService();
     }
 
     /**
@@ -37,9 +36,9 @@ export class ShutdownHandlerApi {
     }
 
     /**
-     * @returns {ShutdownHandlerService}
+     * @returns {Promise<ShutdownHandlerService>}
      */
-    #getShutdownHandlerService() {
-        return ShutdownHandlerService.new();
+    async #getShutdownHandlerService() {
+        return (await import("../../Service/ShutdownHandler/Port/ShutdownHandlerService.mjs")).ShutdownHandlerService.new();
     }
 }
