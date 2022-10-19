@@ -34,7 +34,7 @@ export class GetShutdownHandlerCommand {
      */
     #register(shutdown_handler) {
         /**
-         * @param  {...*} args
+         * @param {...*} args
          * @returns {void}
          */
         const uncaughtException = (...args) => {
@@ -43,7 +43,7 @@ export class GetShutdownHandlerCommand {
         process.on("uncaughtException", uncaughtException);
 
         /**
-         * @param  {...*} args
+         * @param {...*} args
          * @returns {void}
          */
         const unhandledRejection = (...args) => {
