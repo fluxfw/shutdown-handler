@@ -1,5 +1,3 @@
-import { GetShutdownHandlerCommand } from "../Command/GetShutdownHandlerCommand.mjs";
-
 /** @typedef {import("../../../Adapter/ShutdownHandler/ShutdownHandler.mjs").ShutdownHandler} ShutdownHandler */
 
 export class ShutdownHandlerService {
@@ -18,10 +16,10 @@ export class ShutdownHandlerService {
     }
 
     /**
-     * @returns {ShutdownHandler}
+     * @returns {Promise<ShutdownHandler>}
      */
-    getShutdownHandler() {
-        return GetShutdownHandlerCommand.new()
+    async getShutdownHandler() {
+        return (await import("../Command/GetShutdownHandlerCommand.mjs")).GetShutdownHandlerCommand.new()
             .getShutdownHandler();
     }
 }
