@@ -25,20 +25,22 @@ export class ShutdownHandlerApi {
      * @returns {Promise<void>}
      */
     async init() {
-        this.#shutdown_handler_service ??= await this.#getShutdownHandlerService();
+
     }
 
     /**
-     * @returns {ShutdownHandler}
+     * @returns {Promise<ShutdownHandler>}
      */
-    getShutdownHandler() {
-        return this.#shutdown_handler_service.getShutdownHandler();
+    async getShutdownHandler() {
+        return (await this.#getShutdownHandlerService()).getShutdownHandler();
     }
 
     /**
      * @returns {Promise<ShutdownHandlerService>}
      */
     async #getShutdownHandlerService() {
-        return (await import("../../Service/ShutdownHandler/Port/ShutdownHandlerService.mjs")).ShutdownHandlerService.new();
+        this.#shutdown_handler_service ??= (await import("../../Service/ShutdownHandler/Port/ShutdownHandlerService.mjs")).ShutdownHandlerService.new();
+
+        return this.#shutdown_handler_service;
     }
 }

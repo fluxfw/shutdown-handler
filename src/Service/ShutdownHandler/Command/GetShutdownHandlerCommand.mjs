@@ -1,4 +1,4 @@
-import { ShutdownHandler } from "../../../Adapter/ShutdownHandler/ShutdownHandler.mjs";
+/** @typedef {import("../../../Adapter/ShutdownHandler/ShutdownHandler.mjs").ShutdownHandler} ShutdownHandler */
 
 export class GetShutdownHandlerCommand {
     /**
@@ -16,10 +16,10 @@ export class GetShutdownHandlerCommand {
     }
 
     /**
-     * @returns {ShutdownHandler}
+     * @returns {Promise<ShutdownHandler>}
      */
-    getShutdownHandler() {
-        const shutdown_handler = ShutdownHandler.new();
+    async getShutdownHandler() {
+        const shutdown_handler = (await import("../../../Adapter/ShutdownHandler/ShutdownHandler.mjs")).ShutdownHandler.new();
 
         this.#register(
             shutdown_handler
