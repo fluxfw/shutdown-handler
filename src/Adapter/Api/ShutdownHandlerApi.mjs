@@ -22,13 +22,6 @@ export class ShutdownHandlerApi {
     }
 
     /**
-     * @returns {Promise<void>}
-     */
-    async init() {
-
-    }
-
-    /**
      * @returns {Promise<ShutdownHandler>}
      */
     async getShutdownHandler() {
