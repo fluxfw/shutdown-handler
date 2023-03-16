@@ -1,6 +1,17 @@
 {
-    "version": "2023-02-09-1",
-    "description": "",
-    "topics": [],
+    "version": "2023-03-16-1",
+    "description": "Handle shutdown/error events and run shutdown tasks",
+    "topics": [
+        "error",
+        "event",
+        "events",
+        "handle",
+        "handler",
+        "run",
+        "runner",
+        "shutdown",
+        "task",
+        "tasks"
+    ],
     "homepage": ""
 }
