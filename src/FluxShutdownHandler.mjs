@@ -7,9 +7,9 @@ export class FluxShutdownHandler {
     #tasks;
 
     /**
-     * @returns {FluxShutdownHandler}
+     * @returns {Promise<FluxShutdownHandler>}
      */
-    static new() {
+    static async new() {
         return new this();
     }
 
