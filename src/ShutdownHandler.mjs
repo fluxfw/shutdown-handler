@@ -1,13 +1,13 @@
 /** @typedef {import("./task.mjs").task} _task */
 
-export class FluxShutdownHandler {
+export class ShutdownHandler {
     /**
      * @type {_task[]}
      */
     #tasks;
 
     /**
-     * @returns {Promise<FluxShutdownHandler>}
+     * @returns {Promise<ShutdownHandler>}
      */
     static async new() {
         return new this();
